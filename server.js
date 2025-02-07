@@ -11,12 +11,10 @@ const adminEmail = "kfirhason342@gmail.com";
 
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.zoho.com",
-    port: 465,
-    secure: true, 
+    service: "gmail",
     auth: {
-        user: "no-reply@phishingservice.net",
-        pass: "YJz5Jf63hBQx" 
+        user: "main@forti-phish.com",
+        pass: "xhgb ijmf puzo oulu"  
     }
 });
 
