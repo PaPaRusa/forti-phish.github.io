@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const adminEmail = "kfirhason342@gmail.com"; 
+const adminEmail = "main@forti-phish.com"; 
 
 
 const transporter = nodemailer.createTransport({
@@ -25,10 +25,10 @@ app.post("/api/start-phishing-test", async (req, res) => {
         return res.status(400).json({ error: "Email is required" });
     }
 
-    const trackingUrl = `http://phishingservice.net/track?email=${encodeURIComponent(email)}`;
+    const trackingUrl = `http://forti-phish.com/track?email=${encodeURIComponent(email)}`;
 
     const mailOptions = {
-        from: "no-reply@phishingservice.net",
+        from: "no-reply@forti-phish.com",
         to: email,
         subject: "🚨 Important Security Notification",
         html: `
@@ -65,7 +65,7 @@ app.get("/track", (req, res) => {
 
        
         const mailOptions = {
-            from: "no-reply@phishingservice.net",
+            from: "no-reply@forti-phish.com",
             to: adminEmail, 
             subject: "🚨 Phishing Test Alert!",
             text: `User ${email} clicked the phishing link at ${new Date().toISOString()}.`
